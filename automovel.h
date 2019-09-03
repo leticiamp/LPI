@@ -9,6 +9,7 @@ private:
 	float m_preco;
 	int m_chassi;
 	long int m_dataFabricacao;
+	std::string m_modelo;
 	
 public:
 	Automovel();
@@ -25,6 +26,9 @@ public:
 
 	long int getDataFabricacao();
 	void setDataFabricacao(long int dataFabricacao_);
+
+	std::string getModelo();
+	void setModelo(std::string modelo_);
 	
 };
 

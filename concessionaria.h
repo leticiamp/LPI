@@ -23,6 +23,7 @@ public:
 	int getEstoque();
 	void setEstoque(int estoque_);
 	
+	friend std::ostream& operator<< (std::ostream &o, Concessionaria const c);
 };
 
 #endif

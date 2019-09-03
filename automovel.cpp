@@ -34,3 +34,11 @@ long int getDataFabricacao() {
 void setDataFabricacao(long int dataFabricacao_) {
 	m_dataFabricacao = dataFabricacao_;
 }
+
+std::string getModelo(){
+	return m_modelo;
+}
+
+void setModelo(std::string modelo_) {
+	m_modelo = modelo_;
+}
