@@ -13,8 +13,8 @@ private:
 	std::string m_modelo;
 	
 public:
-	Automovel();
-	~Automovel();
+	Automovel(); //Construtor padrão
+	~Automovel(); //Destrutor
 
 	std::string getMarca();
 	void setMarca(std::string marca_);
