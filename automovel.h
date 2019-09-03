@@ -2,6 +2,7 @@
 #define AUTOMOVEL_H
 
 #include <string>
+#include <vector>
 
 class Automovel {
 private:

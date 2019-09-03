@@ -2,6 +2,7 @@
 #define CONCESSIONARIA_H
 
 #include <string>
+#include <vector>
 #include "automovel.h"
 
 class Concessionaria {
@@ -9,6 +10,7 @@ private:
 	std::string m_nome;
 	int m_cnpj;
 	int m_estoque;
+	std::vector<Automovel> v;
 
 public:
 	Concessionaria();
