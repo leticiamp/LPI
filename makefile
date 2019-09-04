@@ -12,7 +12,7 @@ INC = ./include
 
 CPPFLAGS = -Wall -pedantic -std=c++11 -I$(INC)
 
-OBJS = $(OBJ)/dado.o $(OBJ)/jogador.o $(OBJ)/jogo.o $(OBJ)/main.o
+OBJS = $(OBJ)/automovel.o $(OBJ)/concessionaria $(OBJ)/main.o
 
 all: $(PROG)
 	$(PROG)
@@ -20,15 +20,11 @@ all: $(PROG)
 $(PROG): $(OBJS)
 	$(CC) $(CPPFLAGS) -o $(PROG) $(OBJS)
 
-$(OBJ)/dado.o: $(INC)/dado.h
-	$(CC) $(CPPFLAGS) -c $(SRC)/dado.cpp -o $(OBJ)/dado.o
+$(OBJ)/automovel.o: $(INC)/automovel.h
+	$(CC) $(CPPFLAGS) -c $(SRC)/automovel.cpp -o $(OBJ)/automovel.o
 
-$(OBJ)/jogador.o: $(INC)/jogador.h
-	$(CC) $(CPPFLAGS) -c $(SRC)/jogador.cpp -o $(OBJ)/jogador.o
-
-$(OBJ)/jogo.o: $(INC)/jogo.h
-	$(CC) $(CPPFLAGS) -c $(SRC)/jogo.cpp -o $(OBJ)/jogo.o
-
+$(OBJ)/concessionaria.o: $(INC)/concessionaria.h
+	$(CC) $(CPPFLAGS) -c $(SRC)/concessionaria.cpp -o $(OBJ)/concessionaria.o
 
 $(OBJ)/main.o: $(SRC)/main.cpp
 	$(CC) $(CPPFLAGS) -c $(SRC)/main.cpp -o $(OBJ)/main.o
