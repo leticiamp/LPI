@@ -29,7 +29,7 @@ void setEstoque(int estoque_) {
 
 //Sobrecarga que lista os carros da concessionaria
 std::ostream& operator<< (std::ostream &o, Concessionaria const c) {
-	o << getModelo() << endl;
+	o << c. << endl;
 	o << getChassi() << endl;
 	o << getDataFabricacao() << endl;
 	o << getPreco() << endl;
