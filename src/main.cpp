@@ -10,7 +10,7 @@ int newconc(Concessionaria p) { //criar consessionaria
 	p.setCnpj()
 	std::cout<<	"Estoque: ";
 	p.setEstoque()
-	for (i=1;i<=n;i++) {
+	for (i=1;i<=n;i++) { //Adcionar carros à concessionária
 		std::cout<<	"Dados do automóvel "<<i<<" de "<< <<endl;
 		std::cout<<	"     Marca: ";
 		

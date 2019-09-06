@@ -25,7 +25,7 @@ public:
 	int getEstoque();
 	void setEstoque(int estoque_);
 	
-	friend std::ostream& operator<< (std::ostream &o, Concessionaria const c); //Sobrecarga do operador de inserção
+	friend std::ostream& operator<< (std::ostream &o, Automovel const a); //Sobrecarga do operador de inserção
 };
 
 #endif
