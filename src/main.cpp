@@ -11,7 +11,7 @@ int newconc(Concessionaria p) { //criar consessionaria
 	std::cout<<	"Estoque: ";
 	p.setEstoque()
 	for (i=1;i<=n;i++) { //Adcionar carros à concessionária
-		std::cout<<	"Dados do automóvel "<<i<<" de "<< <<endl;
+		std::cout<<	"Dados do automóvel "<<i<<" de "<<n<<endl;
 		std::cout<<	"     Marca: ";
 		
 		std::cout<<	"     Preço: ";
@@ -28,9 +28,20 @@ int newconc(Concessionaria p) { //criar consessionaria
 			}
 		}
 	}
+	cout<<"Concessionaria registrada"<<endl;
 }
 
 int main() {
-	
+	int a;
+	cout<<	"(1) Criar nova concessionaria"<<endl;
+	cout<<	"(2) Aumentar o preço de todos os carros"<<endl;
+	cout<<	"(3) Listar todos os carros"<<endl;
+	cout<<	"(4) Média de carros por concessionaria"<<endl;
+	cin>>	a;
+	if(a<1||a>4) {
+		cout<<"Erro: Insira uma opção válida";
+		return 0;
+	}
+	if(a==1) 
 	return 0;
 }
