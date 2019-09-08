@@ -17,7 +17,7 @@ System::~System() {}
 
 //Pq esta função está retornando um inteiro?
 //coloquei int acho q por reflexo, malz ae kkkk
-Concessionaria System::newConc() {
+Concessionaria System::newconc() {
 	std::cout<<	"Insira os dados da nova concessionaria"<<endl;
 	std::cout<<	"\tNome: ";
 	getline(std::cin, m_nome);
@@ -25,6 +25,7 @@ Concessionaria System::newConc() {
 	getline(std::cin, m_cnpj);
 	cout<<	"\tTamanho do estoque: ";
 	getline(std::cin, m_estoque);
+	std::cout << "Concessionaria registrada" << std::endl;
 }
 
 //eu tinha feito esse aqui que colocava todos os carros, mas acho q é errado
@@ -50,7 +51,38 @@ Concessionaria System::newConc() {
 		}
 	}
 }*/
+Automovel newcar(Concessionaria p) {
+	cout<<	"Insira os dados do automovel"<<endl;
+	cout<<	"\tMarca: ";
+	getline(std::cin, m_marca)	//fiz o getline certo?
+	cout<<	"\tPreco: ";
+	getline(std::cin, m_preco)
+	cout<<	"\tChassi: ";
+	getline(std::cin, m_chassi)
+	cout<<	"\tData de Fabricacao: ";
+	getline(std::cin, m_dataFabricacao)
+	cout<<	"\tModelo: ";
+	getline(std::cin, m_modelo)
+	for(int i=0;i<p.v.size;i++)
+		if (p.v[i].m_chassi==getChassi()) {
+			cout<<	"Este carro já existe"<<endl;
+			//deletar carro?
+			break
+		}
+}
 
+void media() {
+	int *nauto = new int;
+	int *nconc = new int;
+	nauto = 0;
+	nconc = v_lojas.size();
+	for(int i=0;i<nconc;i++) {
+		nauto=nauto+v_lojas[i].m_estoque;
+	}
+	cout<<	"Cada concessionaria tem, em média, "<<nauto<<" carros"<<endl;
+	delete nauto;
+	delete nconc;
+}
 
 char System::menuInicial() {
 	char alternativa = 0;
