@@ -1,7 +1,14 @@
-#include <iostream>
 #include "system.h"
 
 int main() {
+
+	System loja;
+	loja.menuInicial("MENU PRINCIPAL");
+ 
+	return 0;
+}
+
+/*
 	int a;
 	cout<<	"(1) Criar nova concessionaria"<<endl;
 	cout<<	"(2) Aumentar o preço de todos os carros"<<endl;
@@ -12,6 +19,5 @@ int main() {
 		cout<<"Erro: Insira uma opção válida";
 		return 0;
 	}
-	if(a==1) 
-	return 0;
-}
+	if(a==1)
+*/

@@ -1,8 +1,6 @@
 #ifndef CONCESSIONARIA_H
 #define CONCESSIONARIA_H
 
-#include <string>
-#include <vector>
 #include "automovel.h"
 
 class Concessionaria {

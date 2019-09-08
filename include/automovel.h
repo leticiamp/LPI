@@ -1,6 +1,7 @@
 #ifndef AUTOMOVEL_H
 #define AUTOMOVEL_H
 
+#include <iostream>
 #include <string>
 #include <vector>
 

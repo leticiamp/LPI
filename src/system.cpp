@@ -44,10 +44,11 @@ int System::newconc(Concessionaria p) { //criar consessionaria
 	cout<<"Concessionaria registrada"<<endl;
 } 
 
-char System::menuInicial() {
+char System::menuInicial(string abasOrientacao) {
 	char alternativa = 0;
 	do {
 		std::cout << "\n ++++++++++++++++++++++++++++++++++++++++++++++\n" << "\n"
+				<< "                   "  << abasOrientacao
 				<< " \n Escolha uma das seguintes alternativas abaixo: " << "\n"
 				<< " Digite '1' para: Opções da Concessionaria" << "\n"
 				<< " Digite '2' para: Opções do Automovel" << "\n"
@@ -57,9 +58,9 @@ char System::menuInicial() {
 				std::cin >> alternativa; cin.ignore(); //cin.ignore() ignora caracteres não lidos no buffer de entrada
 
 		switch(alternativa) {
-			case '1' : menuConcessionaria();
+			case '1' : menuConcessionaria("\n Menu Inicial > Concessionaria");
 				break;
-			case '2' : menuAutomovel();
+			case '2' : menuAutomovel("\n Menu Inicial > Automovel");
 				break;
 			case '3' : // Nenhuma ação. Somente sai do menu.
 				break;
@@ -70,18 +71,19 @@ char System::menuInicial() {
 	return alternativa;
 }
 
-char System::menuConcessionaria() {
+char System::menuConcessionaria(string abasOrientacao) {
 	char alternativa = 0;
 
 	do {
 		std::cout << "\n ++++++++++++++++++++++++++++++++++++++++++++++\n" << "\n"
-			 << " \n Escolha uma das seguintes alternativas abaixo: " << "\n"
-			 << " Digite '1' para: Criar concessionária" << "\n"
-			 << " Digite '2' para: Listar concessionárias" << "\n"
-			 << " Digite '3' para: Sair " << "\n"
-			 << " Alternativa escolhida: ";
+			<< "                   " << abasOrientacao
+			<< " \n Escolha uma das seguintes alternativas abaixo: " << "\n"
+			<< " Digite '1' para: Criar concessionária" << "\n"
+			<< " Digite '2' para: Listar concessionárias" << "\n"
+			<< " Digite '3' para: Sair " << "\n"
+			<< " Alternativa escolhida: ";
 
-			 std::cin >> alternativa; cin.ignore();
+			std::cin >> alternativa; cin.ignore();
 
 		switch(alternativa) {
 			case '1' : newconc();
@@ -97,23 +99,27 @@ char System::menuConcessionaria() {
 	return alternativa;
 }
 
-char System::menuAutomovel() {
+char System::menuAutomovel(string abasOrientacao) {
 	char alternativa = 0;
 
 	do {
 		std::cout << "\n ++++++++++++++++++++++++++++++++++++++++++++++\n" << "\n"
-			 << " \n Escolha uma das seguintes alternativas abaixo: " << "\n"
-			 << " Digite '1' para: Adicionar automóvel" << "\n"
-			 << " Digite '2' para: Listar automóvel" << "\n"
-			 << " Digite '4' para: Aumentar valor" << "\n"
-			 << " Digite '3' para: Sair " << "\n"
-			 << " Alternativa escolhida: "; std::cin >> alternativa; cin.ignore();
+			<< "                   " << abasOrientacao
+			<< " \n Escolha uma das seguintes alternativas abaixo: " << "\n"
+			<< " Digite '1' para: Adicionar automóvel" << "\n"
+			<< " Digite '2' para: Listar automóvel" << "\n"
+			<< " Digite '3' para: Aumentar valor" << "\n"
+			<< " Digite '4' para: Sair " << "\n"
+			<< " Alternativa escolhida: ";
+
+			std::cin >> alternativa; cin.ignore();
+			
 		switch(alternativa){
 			case '1' : 
 				break;
 			case '2' : 
 				break;
-			case '3' : 
+			case '3' : aumentarValor();
 				break;
 			case '4' : 
 				break;
