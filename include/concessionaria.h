@@ -10,7 +10,7 @@ private:
 	std::string m_nome;
 	int m_cnpj;
 	int m_estoque;
-	std::vector<Automovel> v;
+	std::vector<Automovel> v_carros;
 
 public:
 	Concessionaria(); //Construtor padrão
