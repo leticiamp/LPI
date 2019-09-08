@@ -12,6 +12,11 @@ public:
 	~System();
 
 	Concessionaria newconc(); //criar consessionaria
+	char menuInicial();
+	char menuConcessionaria();
+	char menuAutomovel();
+
+	void listarAutomovel(); //Poderia passar o nome da concessionaria como parâmetro
 	
 };
 

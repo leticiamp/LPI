@@ -42,3 +42,9 @@ std::string getModelo(){
 void setModelo(std::string modelo_) {
 	m_modelo = modelo_;
 }
+
+void Automovel::aumentarValor(float porcentagem) {
+	for (int i=0; i < v_carros.size(); i++) {
+		m_preco *= ((porcentagem/100) + 1); 
+	}
+}

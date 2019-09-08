@@ -15,7 +15,7 @@ System::~System() {}
 } */
 
 //Pq esta função está retornando um inteiro?
-int newconc(Concessionaria p) { //criar consessionaria
+int System::newconc(Concessionaria p) { //criar consessionaria
 	std::cout<<	"Nome: ";
 	p.setNome()
 	std::cout<<	"CNPJ: ";		//exemploMax: 99.999.999/0001-99
@@ -43,3 +43,85 @@ int newconc(Concessionaria p) { //criar consessionaria
 	}
 	cout<<"Concessionaria registrada"<<endl;
 } 
+
+char System::menuInicial() {
+	char alternativa = 0;
+	do {
+		std::cout << "\n ++++++++++++++++++++++++++++++++++++++++++++++\n" << "\n"
+				<< " \n Escolha uma das seguintes alternativas abaixo: " << "\n"
+				<< " Digite '1' para: Opções da Concessionaria" << "\n"
+				<< " Digite '2' para: Opções do Automovel" << "\n"
+				<< " Digite '3' para: Sair deste Menu" << "\n"
+				<< " Alternativa escolhida: ";
+
+				std::cin >> alternativa; cin.ignore(); //cin.ignore() ignora caracteres não lidos no buffer de entrada
+
+		switch(alternativa) {
+			case '1' : menuConcessionaria();
+				break;
+			case '2' : menuAutomovel();
+				break;
+			case '3' : // Nenhuma ação. Somente sai do menu.
+				break;
+			default : std::cout << " \n\n Alternativa inválida!" << std::endl;
+		}
+	} while(alternativa != '3');
+
+	return alternativa;
+}
+
+char System::menuConcessionaria() {
+	char alternativa = 0;
+
+	do {
+		std::cout << "\n ++++++++++++++++++++++++++++++++++++++++++++++\n" << "\n"
+			 << " \n Escolha uma das seguintes alternativas abaixo: " << "\n"
+			 << " Digite '1' para: Criar concessionária" << "\n"
+			 << " Digite '2' para: Listar concessionárias" << "\n"
+			 << " Digite '3' para: Sair " << "\n"
+			 << " Alternativa escolhida: ";
+
+			 std::cin >> alternativa; cin.ignore();
+
+		switch(alternativa) {
+			case '1' : newconc();
+				break;
+			case '2' : //metodo para listar as concessionarias
+				break;
+			case '3' : // Nenhuma ação. Somente sai do menu.
+				break;
+			default : std::cout << " \n\n Alternativa inválida!" << std::endl;
+		}
+	} while(alternativa != '3');
+
+	return alternativa;
+}
+
+char System::menuAutomovel() {
+	char alternativa = 0;
+
+	do {
+		std::cout << "\n ++++++++++++++++++++++++++++++++++++++++++++++\n" << "\n"
+			 << " \n Escolha uma das seguintes alternativas abaixo: " << "\n"
+			 << " Digite '1' para: Adicionar automóvel" << "\n"
+			 << " Digite '2' para: Listar automóvel" << "\n"
+			 << " Digite '4' para: Aumentar valor" << "\n"
+			 << " Digite '3' para: Sair " << "\n"
+			 << " Alternativa escolhida: "; std::cin >> alternativa; cin.ignore();
+		switch(alternativa){
+			case '1' : 
+				break;
+			case '2' : 
+				break;
+			case '3' : 
+				break;
+			case '4' : 
+				break;
+			case '5' : // Nenhuma ação. Somente sai do menu.
+				break;
+			default : std::cout << " \n\n Alternativa inválida!" << std::endl;
+		}
+	} while (alternativa != '5');
+
+	return alternativa;	
+}

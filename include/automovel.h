@@ -33,4 +33,6 @@ public:
 	
 };
 
+void Automovel::aumentarValor(float porcentagem); //Aumento de x% no preço dos carros
+
 #endif
