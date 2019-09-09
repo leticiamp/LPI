@@ -13,7 +13,7 @@ public:
 
 	Concessionaria newconc(); //criar consessionaria
 	Automovel newcar(Concessionaria p); //criar carro
-	void media();
+	void media(); //Calcula a média dos carros por concessionária
 	char menuInicial();
 	char menuConcessionaria();
 	char menuAutomovel();

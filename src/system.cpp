@@ -14,9 +14,6 @@ System::~System() {}
 	std::cout << "Concessionaria registrada" << std::endl;
 } */
 
-
-//Pq esta função está retornando um inteiro?
-//coloquei int acho q por reflexo, malz ae kkkk
 Concessionaria System::newconc() {
 	std::cout << "Insira os dados da nova concessionaria" << std::endl;
 
