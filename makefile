@@ -12,7 +12,7 @@ INC = ./include
 
 CPPFLAGS = -Wall -ansi -pedantic -O0 -g -std=c++11 -I$(INC)
 
-OBJS = $(OBJ)/automovel.o $(OBJ)/concessionaria $(OBJ)/system.o $(OBJ)/main.o
+OBJS = $(OBJ)/automovel.o $(OBJ)/concessionaria.o $(OBJ)/system.o $(OBJ)/main.o
 
 all: $(PROG)
 	$(PROG)
