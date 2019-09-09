@@ -73,8 +73,8 @@ Automovel System::newcar(Concessionaria p) {
 	for (int i=0; i < p.v.size; i++) {
 		if (p.v[i].m_chassi == getChassi()) {
 			std::cout << "Este carro já existe" << std::endl;
-			//deletar carro?
-			break
+			p.v.pop_back();
+			break;
 		}
 	}
 }
