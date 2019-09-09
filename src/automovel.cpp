@@ -1,7 +1,7 @@
 #include "automovel.h"
 
-Automovel::Automovel() {};
-Automovel::~Automovel() {};
+Automovel::Automovel() {}
+Automovel::~Automovel() {}
 
 std::string getMarca() {
 	return m_marca;
@@ -43,12 +43,12 @@ void setModelo(std::string modelo_) {
 	m_modelo = modelo_;
 }
 
-void Automovel::aumentarValor() {
+void aumentarValor() {
 	float porcentagem;
 
 	std::cout << "Informe a porcentagem de aumento:";
 	std::cin >> porcentagem;
-	
+
 	for (int i=0; i < v_carros.size(); i++) {
 		m_preco *= ((porcentagem/100) + 1); 
 	}
