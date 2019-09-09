@@ -12,6 +12,8 @@ public:
 	~System();
 
 	Concessionaria newconc(); //criar consessionaria
+	Automovel newcar(Concessionaria p); //criar carro
+	void media();
 	char menuInicial();
 	char menuConcessionaria();
 	char menuAutomovel();

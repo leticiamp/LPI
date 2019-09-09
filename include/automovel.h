@@ -12,6 +12,7 @@ private:
 	int m_chassi;
 	long int m_dataFabricacao;
 	std::string m_modelo;
+	std::vector<Automovel> v_carros;
 	
 public:
 	Automovel(); //Construtor padrão
@@ -31,9 +32,10 @@ public:
 
 	std::string getModelo();
 	void setModelo(std::string modelo_);
-	
-};
 
-void aumentarValor(float porcentagem); //Aumento de x% no preço dos carros
+	friend std::ostream& operator<< (std::ostream &o, Automovel const a); //Sobrecarga do operador de inserção
+
+	void aumentarValor(float porcentagem); //Aumento de x% no preço dos carros
+};
 
 #endif

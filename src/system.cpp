@@ -18,13 +18,17 @@ System::~System() {}
 //Pq esta função está retornando um inteiro?
 //coloquei int acho q por reflexo, malz ae kkkk
 Concessionaria System::newconc() {
-	std::cout<<	"Insira os dados da nova concessionaria"<<endl;
-	std::cout<<	"\tNome: ";
+	std::cout << "Insira os dados da nova concessionaria" << std::endl;
+
+	std::cout << "\tNome: ";
 	getline(std::cin, m_nome);
-	cout<<	"\tCNPJ: ";
+
+	std::cout << "\tCNPJ: ";
 	getline(std::cin, m_cnpj);
-	cout<<	"\tTamanho do estoque: ";
+
+	std::cout << "\tTamanho do estoque: ";
 	getline(std::cin, m_estoque);
+
 	std::cout << "Concessionaria registrada" << std::endl;
 }
 
@@ -51,35 +55,45 @@ Concessionaria System::newconc() {
 		}
 	}
 }*/
-Automovel newcar(Concessionaria p) {
-	cout<<	"Insira os dados do automovel"<<endl;
-	cout<<	"\tMarca: ";
+Automovel System::newcar(Concessionaria p) {
+	std::cout << "Insira os dados do automovel" << std::endl;
+
+	std::cout << "\tMarca: ";
 	getline(std::cin, m_marca)	//fiz o getline certo?
-	cout<<	"\tPreco: ";
+
+	std::cout << "\tPreco: ";
 	getline(std::cin, m_preco)
-	cout<<	"\tChassi: ";
+
+	std::cout << "\tChassi: ";
 	getline(std::cin, m_chassi)
-	cout<<	"\tData de Fabricacao: ";
+
+	std::cout << "\tData de Fabricacao: ";
 	getline(std::cin, m_dataFabricacao)
-	cout<<	"\tModelo: ";
+
+	std::cout << "\tModelo: ";
 	getline(std::cin, m_modelo)
-	for(int i=0;i<p.v.size;i++)
-		if (p.v[i].m_chassi==getChassi()) {
-			cout<<	"Este carro já existe"<<endl;
+
+	for (int i=0; i < p.v.size; i++) {
+		if (p.v[i].m_chassi == getChassi()) {
+			std::cout << "Este carro já existe" << std::endl;
 			//deletar carro?
 			break
 		}
+	}
 }
 
-void media() {
+void System::media() {
 	int *nauto = new int;
 	int *nconc = new int;
+
 	nauto = 0;
 	nconc = v_lojas.size();
-	for(int i=0;i<nconc;i++) {
-		nauto=nauto+v_lojas[i].m_estoque;
+
+	for(int i=0; i < nconc; i++) {
+		nauto = nauto + v_lojas[i].m_estoque;
 	}
-	cout<<	"Cada concessionaria tem, em média, "<<nauto<<" carros"<<endl;
+	std::cout << "Cada concessionaria tem, em média, "<< nauto <<" carros" << std::endl;
+
 	delete nauto;
 	delete nconc;
 }
@@ -118,7 +132,8 @@ char System::menuConcessionaria() {
 			 << " \n Escolha uma das seguintes alternativas abaixo: " << "\n"
 			 << " Digite '1' para: Criar concessionária" << "\n"
 			 << " Digite '2' para: Listar concessionárias" << "\n"
-			 << " Digite '3' para: Sair " << "\n"
+			 << " Digite '3' para: Aumentar valor" << "\n"
+			 << " Digite '4' para: Sair " << "\n"
 			 << " Alternativa escolhida: ";
 
 			 std::cin >> alternativa; cin.ignore();
@@ -128,11 +143,13 @@ char System::menuConcessionaria() {
 				break;
 			case '2' : //metodo para listar as concessionarias
 				break;
-			case '3' : // Nenhuma ação. Somente sai do menu.
+			case '3' : aumentarValor();
+				break;
+			case '4' : // Nenhuma ação. Somente sai do menu.
 				break;
 			default : std::cout << " \n\n Alternativa inválida!" << std::endl;
 		}
-	} while(alternativa != '3');
+	} while(alternativa != '4');
 
 	return alternativa;
 }
@@ -145,23 +162,18 @@ char System::menuAutomovel() {
 			 << " \n Escolha uma das seguintes alternativas abaixo: " << "\n"
 			 << " Digite '1' para: Adicionar automóvel" << "\n"
 			 << " Digite '2' para: Listar automóvel" << "\n"
-			 << " Digite '4' para: Aumentar valor" << "\n"
 			 << " Digite '3' para: Sair " << "\n"
 			 << " Alternativa escolhida: "; std::cin >> alternativa; cin.ignore();
 		switch(alternativa){
-			case '1' : 
+			case '1' : newcar(Concessionaria p);
 				break;
 			case '2' : 
 				break;
-			case '3' : 
-				break;
-			case '4' : 
-				break;
-			case '5' : // Nenhuma ação. Somente sai do menu.
+			case '3' : // Nenhuma ação. Somente sai do menu.
 				break;
 			default : std::cout << " \n\n Alternativa inválida!" << std::endl;
 		}
-	} while (alternativa != '5');
+	} while (alternativa != '3');
 
 	return alternativa;	
 }
