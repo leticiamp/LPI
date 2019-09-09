@@ -3,27 +3,27 @@
 Concessionaria::Concessionaria() {};
 Concessionaria::~Concessionaria() {};
 
-std::string getNome() {
+std::string Concessionaria::getNome() {
 	return m_nome;
 }
 
-void setNome(std::string nome_) {
+void Concessionaria::setNome(std::string nome_) {
 	m_nome = nome_;
 }
 
-int getCnpj() {
+int Concessionaria::getCnpj() {
 	return m_cnpj;
 }
 
-void setCnpj(int cnpj_) {
+void Concessionaria::setCnpj(int cnpj_) {
 	m_cnpj = cnpj_;
 }
 
-int getEstoque() {
+int Concessionaria::getEstoque() {
 	return m_estoque;
 }
 
-void setEstoque(int estoque_) {
+void Concessionaria::setEstoque(int estoque_) {
 	m_estoque = estoque_;
 }
 

@@ -3,43 +3,43 @@
 Automovel::Automovel() {}
 Automovel::~Automovel() {}
 
-std::string getMarca() {
+std::string Automovel::getMarca() {
 	return m_marca;
 }
 
-void setMarca(std::string marca_) {
+void Automovel::setMarca(std::string marca_) {
 	m_marca = marca_;
 }
 
-float getPreco() {
+float Automovel::getPreco() {
 	return m_preco;
 }
 
-void setPreco(float preco_) {
+void Automovel::setPreco(float preco_) {
 	m_preco = preco_;
 }
 
-int getChassi() {
+int Automovel::getChassi() {
 	return m_chassi;
 }
 
-void setChassi(int chassi_) {
+void Automovel::setChassi(int chassi_) {
 	m_chassi = chassi_;
 }
 
-long int getDataFabricacao() {
+long int Automovel::getDataFabricacao() {
 	return m_dataFabricacao;
 }
 
-void setDataFabricacao(long int dataFabricacao_) {
+void Automovel::setDataFabricacao(long int dataFabricacao_) {
 	m_dataFabricacao = dataFabricacao_;
 }
 
-std::string getModelo(){
+std::string Automovel::getModelo(){
 	return m_modelo;
 }
 
-void setModelo(std::string modelo_) {
+void Automovel::setModelo(std::string modelo_) {
 	m_modelo = modelo_;
 }
 
