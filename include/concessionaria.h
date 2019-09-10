@@ -8,6 +8,7 @@ private:
 	std::string m_nome;
 	int m_cnpj;
 	int m_estoque;
+	std::vector<Automovel> v_carros;
 
 public:
 	Concessionaria(); //Construtor padrão
@@ -21,6 +22,10 @@ public:
 
 	int getEstoque();
 	void setEstoque(int estoque_);
+
+	friend std::ostream& operator<< (std::ostream &o, Automovel const a); //Sobrecarga do operador de inserção
+
+	void aumentarValor(std::string nome, float porcentagem); //Aumento de x% no preço dos carros
 };
 
 #endif

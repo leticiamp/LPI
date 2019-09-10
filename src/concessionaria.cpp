@@ -25,4 +25,26 @@ int Concessionaria::getEstoque() {
 
 void Concessionaria::setEstoque(int estoque_) {
 	m_estoque = estoque_;
+
+}
+
+Automovel Concessionaria::getV_carros() {
+	return v_carros;
+}
+
+//Sobrecarga que lista os carros da concessionaria
+std::ostream& operator<< (std::ostream &o, Automovel const a) {
+	o << a.getMarca() << std::endl;
+	o << a.getModelo() << std::endl;
+	o << a.getChassi() << std::endl;
+	o << a.getDataFabricacao() << std::endl;
+	o << a.getPreco() << std::endl;
+	
+	return o;
+}
+
+void Concessionaria::aumentarValor(std::string nome, float porcentagem) {
+	for (int i=0; i < v_carros.size(); i++) {
+		m_preco *= ((porcentagem/100) + 1);
+	}
 }

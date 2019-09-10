@@ -16,10 +16,7 @@ public:
 	void media(); //Calcula a média dos carros por concessionária
 	char menuInicial();
 	char menuConcessionaria();
-	char menuAutomovel();
-
-	void listarAutomovel(); //Poderia passar o nome da concessionaria como parâmetro
-	
+	char menuAutomovel();	
 };
 
 #endif
