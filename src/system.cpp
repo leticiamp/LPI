@@ -3,41 +3,50 @@
 System::System() {}
 System::~System() {}
 
-Concessionaria System::newconc() {
+void System::newconc() {
+	std::string nome;
+	int cnpj;
+	int estoque;
 	
 	std::cout << "Insira os dados da nova concessionaria" << std::endl;
 
 	std::cout << "\tNome: ";
-	getline(std::cin, m_nome);
+	getline(std::cin, nome);
 
 	std::cout << "\tCNPJ: ";
-	std::cin >> m_cnpj;
+	std::cin >> cnpj;
 
 	std::cout << "\tTamanho do estoque: ";
-	std::cin >> m_estoque;
+	std::cin >> estoque;
+
+	v_lojas.push_back(Concessionaria(nome, cnpj, estoque));
 
 	std::cout << "Concessionaria registrada" << std::endl;
-
-	return ;
 }
 
-Automovel System::newcar(Concessionaria p) {
+void System::newcar(Concessionaria p) {
+	std::string marca;
+	float preco;
+	int chassi;
+	long int dataFabricacao;
+	std::string modelo;
+
 	std::cout << "Insira os dados do automovel" << std::endl;
 
 	std::cout << "\tMarca: ";
-	getline(std::cin, m_marca)
+	getline(std::cin, marca);
 
 	std::cout << "\tPreco: ";
-	std::cin >> m_preco;
+	std::cin >> preco;
 
 	std::cout << "\tChassi: ";
-	getline(std::cin, m_chassi)
+	std::cin >> chassi;
 
 	std::cout << "\tData de Fabricacao: ";
-	std::cin >> m_dataFabricacao;
+	std::cin >> dataFabricacao;
 
 	std::cout << "\tModelo: ";
-	getline(std::cin, m_modelo)
+	getline(std::cin, modelo);
 
 	for (int i=0; i < p.v_carros.size; i++) {
 		if (p.v_carros[i].m_chassi == getChassi()) {

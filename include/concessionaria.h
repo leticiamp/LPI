@@ -11,7 +11,8 @@ private:
 	std::vector<Automovel> v_carros;
 
 public:
-	Concessionaria(); //Construtor padrão
+	Concessionaria();
+	Concessionaria(std::string nome, int cnpj, int estoque); //Construtor 
 	~Concessionaria(); //Destrutor
 
 	std::string getNome();
@@ -22,6 +23,8 @@ public:
 
 	int getEstoque();
 	void setEstoque(int estoque_);
+
+	std::vector<Automovel> getV_carros();
 
 	friend std::ostream& operator<< (std::ostream &o, Automovel const a); //Sobrecarga do operador de inserção
 

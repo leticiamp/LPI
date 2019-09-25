@@ -14,8 +14,13 @@ CPPFLAGS = -Wall -ansi -pedantic -O0 -g -std=c++11 -I$(INC)
 
 OBJS = $(OBJ)/automovel.o $(OBJ)/concessionaria.o $(OBJ)/system.o $(OBJ)/main.o
 
-all: $(PROG)
+all: dirs $(PROG)
 	$(PROG)
+
+.PHONY: dirs
+dirs:
+	mkdir -p $(OBJ)
+
 
 $(PROG): $(OBJS)
 	$(CC) $(CPPFLAGS) -o $(PROG) $(OBJS)

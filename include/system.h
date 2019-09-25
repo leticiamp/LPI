@@ -11,8 +11,8 @@ public:
 	System();
 	~System();
 
-	Concessionaria newconc(); //criar consessionaria
-	Automovel newcar(Concessionaria p); //criar carro
+	void newconc(); //criar consessionaria
+	void newcar(Concessionaria p); //criar carro
 	void media(); //Calcula a média dos carros por concessionária
 	char menuInicial();
 	char menuConcessionaria();

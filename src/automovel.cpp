@@ -1,6 +1,16 @@
 #include "automovel.h"
 
 Automovel::Automovel() {}
+
+Automovel::Automovel(std::string marca_, float preco_, int chassi_,
+					long int dataFabricacao_, std::string modelo_) {
+	m_marca = marca_;
+	m_preco = preco_;
+	m_chassi = chassi_;
+	m_dataFabricacao = dataFabricacao_;
+	m_modelo = modelo_;
+}
+
 Automovel::~Automovel() {}
 
 std::string Automovel::getMarca() {
