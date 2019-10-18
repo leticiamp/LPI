@@ -1,5 +1,5 @@
 # Makefile da disciplina Linguagem de Programação I
-# Alunos: Letícia Pinheiro e Matheus Filgueira
+# Alunos: Letícia Pinheiro e Bruno Alysson
 # Avaliação prática I
 
 CC = g++

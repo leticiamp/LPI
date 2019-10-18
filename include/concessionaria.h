@@ -25,6 +25,7 @@ public:
 	void setEstoque(int estoque_);
 
 	std::vector<Automovel> getV_carros();
+	void setV_carros(Automovel carro_);
 
 	friend std::ostream& operator<< (std::ostream &o, Automovel const a); //Sobrecarga do operador de inserção
 

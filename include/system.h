@@ -12,7 +12,7 @@ public:
 	~System();
 
 	void newconc(); //criar consessionaria
-	void newcar(Concessionaria p); //criar carro
+	void newcar(Concessionaria &C); //criar carro
 	void media(); //Calcula a média dos carros por concessionária
 	char menuInicial();
 	char menuConcessionaria();

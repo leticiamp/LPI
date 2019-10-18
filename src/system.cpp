@@ -24,7 +24,7 @@ void System::newconc() {
 	std::cout << "Concessionaria registrada" << std::endl;
 }
 
-void System::newcar(Concessionaria p) {
+void System::newcar(Concessionaria &C) {
 	std::string marca;
 	float preco;
 	int chassi;
@@ -48,11 +48,13 @@ void System::newcar(Concessionaria p) {
 	std::cout << "\tModelo: ";
 	getline(std::cin, modelo);
 
-	for (int i=0; i < p.v_carros.size; i++) {
-		if (p.v_carros[i].m_chassi == getChassi()) {
-			std::cout << "Este carro já existe" << std::endl;
-			p.v_carros.pop_back();
-			break;
+	for(unsigned int i=0; i < C.getV_carros().size(); i++) {
+		if(chassi == C.getV_carros()[i].getChassi()){
+			std::cout << "Este Veículo já foi cadastrado" << std::endl;
+		}
+		else {
+			C.setV_carros(Automovel(marca, preco, chassi, dataFabricacao, modelo));
+			std::cout << "Veículo cadastrado" << std::endl;
 		}
 	}
 }

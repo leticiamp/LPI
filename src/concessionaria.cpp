@@ -39,6 +39,10 @@ std::vector<Automovel> Concessionaria::getV_carros() {
 	return v_carros;
 }
 
+void Concessionaria::setV_carros(Automovel carro_) {
+	v_carros.push_back(carro_);
+}
+
 //Sobrecarga que lista os carros da concessionaria
 std::ostream& operator<< (std::ostream &o, Automovel a) {
 	o << a.getMarca() << std::endl;

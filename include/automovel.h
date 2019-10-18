@@ -16,7 +16,8 @@ private:
 	
 public:
 	Automovel(); //Construtor padrão
-	Automovel(std::string marca_, float preco_, int chassi_); //Construtor parametrizado
+	Automovel(std::string marca_, float preco_, int chassi_,
+			  long int dataFabricacao_, std::string modelo_); //Construtor parametrizado
 	~Automovel(); //Destrutor
 
 	std::string getMarca();
