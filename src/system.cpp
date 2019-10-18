@@ -98,7 +98,7 @@ char System::menuInicial() {
 			default : std::cout << " \n\n Alternativa inválida!" << std::endl;
 		}
 	} while(alternativa != '3');
-
+aumentarValor
 	return alternativa;
 }
 
