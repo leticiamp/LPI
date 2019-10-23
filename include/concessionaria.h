@@ -29,7 +29,7 @@ public:
 
 	friend std::ostream& operator<< (std::ostream &o, Automovel const a); //Sobrecarga do operador de inserção
 
-	void aumentarValor(std::string nome, float porcentagem); //Aumento de x% no preço dos carros
+	void aumentarValor(float porcentagem); //Aumento de x% no preço dos carros
 };
 
 #endif

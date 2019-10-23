@@ -60,19 +60,17 @@ void System::newcar(Concessionaria &C) {
 }
 
 void System::media() {
-	int *nauto = new int;
-	int *nconc = new int;
+	Concessionaria *C;
+	int count = 0;
+	float media;
 
-	nauto = 0;
-	nconc = v_lojas.size();
-
-	for(int i=0; i < nconc; i++) {
-		nauto = nauto + v_lojas[i].m_estoque;
+	for(unsigned int i=0; i < v_lojas.size(); i++) {
+		count += C -> getEstoque();
 	}
-	std::cout << "Cada concessionaria tem, em média, "<< nauto <<" carros" << std::endl;
 
-	delete nauto;
-	delete nconc;
+	media = count / v_lojas.size();
+
+	std::cout << "A média dos carros por concessionaria é: " << media << std::endl;
 }
 
 char System::menuInicial() {
@@ -98,12 +96,14 @@ char System::menuInicial() {
 			default : std::cout << " \n\n Alternativa inválida!" << std::endl;
 		}
 	} while(alternativa != '3');
-aumentarValor
+
 	return alternativa;
 }
 
 char System::menuConcessionaria() {
 	char alternativa = 0;
+	Concessionaria C;
+	float porcentagem;
 
 	do {
 		std::cout << "\n ++++++++++++++++++++++++++++++++++++++++++++++\n" << "\n"
@@ -122,7 +122,9 @@ char System::menuConcessionaria() {
 				break;
 			case '2' : //metodo para listar as concessionarias
 				break;
-			case '3' : aumentarValor(std::string nome, float porcentagem);
+			case '3' : std::cout << "Informe a porcentagem:";
+						std::cin >> porcentagem;
+						C.aumentarValor(porcentagem);
 				break;
 			case '4' : // Nenhuma ação. Somente sai do menu.
 				break;
@@ -135,12 +137,13 @@ char System::menuConcessionaria() {
 
 char System::menuAutomovel() {
 	char alternativa = 0;
+	Concessionaria *C;
 
 	do {
 		std::cout << "\n ++++++++++++++++++++++++++++++++++++++++++++++\n" << "\n"
 			 << " \n Escolha uma das seguintes alternativas abaixo: " << "\n"
 			 << " Digite '1' para: Adicionar automóvel" << "\n"
-			 << " Digite '2' para: Listar automóvel" << "\n"
+			 << " Digite '2' para: Listar automóveis" << "\n"
 			 << " Digite '3' para: Sair " << "\n"
 			 << " Alternativa escolhida: ";
 
@@ -148,9 +151,12 @@ char System::menuAutomovel() {
 			 std::cin.ignore();
 
 		switch(alternativa){
-			case '1' : newcar(Concessionaria p);
+			case '1' : newcar(Concessionaria C);
 				break;
-			case '2' : listarAutomovel(Concessionaria nome);
+			case '2' : 
+						/*for(int i=0; i < C -> getEstoque(); i++) {
+							std::cout << C -> getV_carros()[i];
+						}*/
 				break;
 			case '3' : // Nenhuma ação. Somente sai do menu.
 				break;
