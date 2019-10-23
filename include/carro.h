@@ -12,12 +12,12 @@ class Carro : public Automovel {
 private:
 	Tipo_motor m_tipo_motor;
 public:
-	Carro();
-	Carro(Tipo_motor tipo_motor_)
-	~Carro();
+	Carro::Carro();
+	Carro::Carro(Tipo_motor tipo_motor_)
+	Carro::~Carro();
 
-	Tipo_motor getTipo_motor();
-	void setTipo_motor(Tipo_motor tipo_motor_);
+	Tipo_motor Carro::getTipo_motor();
+	void Carro::setTipo_motor(Tipo_motor tipo_motor_);
 };
 
 #endif

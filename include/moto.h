@@ -3,21 +3,21 @@
 
 #include "automovel.h"
 
-enum Tipo_motor {
-	GASOLINA,
-	ELETRICO
+enum Model {
+	CLASSICO,
+	ESPORTIVO
 };
 
-class Carro : public Automovel {
+class Moto : public Automovel {
 private:
-	Tipo_motor m_tipo_motor;
+	Model m_model;
 public:
-	Carro();
-	Carro(Tipo_motor tipo_motor_)
-	~Carro();
+	Moto::Moto();
+	Moto::Moto(Model model)
+	Moto::~Moto();
 
-	Tipo_motor getTipo_motor();
-	void setTipo_motor(Tipo_motor tipo_motor_);
+	Model Moto::getModel();
+	void Moto::setModel(Model model);
 };
 
 #endif
