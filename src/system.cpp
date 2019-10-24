@@ -151,7 +151,7 @@ char System::menuAutomovel() {
 			 std::cin.ignore();
 
 		switch(alternativa){
-			case '1' : newcar(Concessionaria C);
+			case '1' : newcar(*C);
 				break;
 			case '2' : 
 						/*for(int i=0; i < C -> getEstoque(); i++) {
