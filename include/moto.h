@@ -12,12 +12,12 @@ class Moto : public Automovel {
 private:
 	Model m_model;
 public:
-	Moto::Moto();
-	Moto::Moto(Model model)
-	Moto::~Moto();
+	Moto();
+	Moto(Model model);
+	~Moto();
 
-	Model Moto::getModel();
-	void Moto::setModel(Model model);
+	Model getModel();
+	void setModel(Model model);
 };
 
 #endif

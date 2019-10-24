@@ -27,7 +27,7 @@ void System::newconc() {
 void System::newcar(Concessionaria &C) {
 	std::string marca;
 	float preco;
-	int chassi;
+	std::string chassi;
 	long int dataFabricacao;
 	std::string modelo;
 
@@ -40,7 +40,7 @@ void System::newcar(Concessionaria &C) {
 	std::cin >> preco;
 
 	std::cout << "\tChassi: ";
-	std::cin >> chassi;
+	getline(std::cin, chassi);
 
 	std::cout << "\tData de Fabricacao: ";
 	std::cin >> dataFabricacao;
@@ -49,7 +49,7 @@ void System::newcar(Concessionaria &C) {
 	getline(std::cin, modelo);
 
 	for(unsigned int i=0; i < C.getV_carros().size(); i++) {
-		if(chassi == C.getV_carros()[i].getChassi()){
+		if(chassi.compare(C.getV_carros()[i].getChassi()) == 0) { //Se as strings forem iguais
 			std::cout << "Este Veículo já foi cadastrado" << std::endl;
 		}
 		else {
@@ -77,7 +77,7 @@ char System::menuInicial() {
 	char alternativa = 0;
 	do {
 		std::cout << "\n ++++++++++++++++++++++++++++++++++++++++++++++\n" << "\n"
-				<< " \n Escolha uma das seguintes alternativas abaixo: " << "\n"
+				<< " Escolha uma das seguintes alternativas abaixo: " << "\n"
 				<< " Digite '1' para: Opções da Concessionaria" << "\n"
 				<< " Digite '2' para: Opções do Automovel" << "\n"
 				<< " Digite '3' para: Sair deste Menu" << "\n"
@@ -107,7 +107,7 @@ char System::menuConcessionaria() {
 
 	do {
 		std::cout << "\n ++++++++++++++++++++++++++++++++++++++++++++++\n" << "\n"
-			 << " \n Escolha uma das seguintes alternativas abaixo: " << "\n"
+			 << " Escolha uma das seguintes alternativas abaixo: " << "\n"
 			 << " Digite '1' para: Criar concessionária" << "\n"
 			 << " Digite '2' para: Listar concessionárias" << "\n"
 			 << " Digite '3' para: Aumentar valor" << "\n"
@@ -141,7 +141,7 @@ char System::menuAutomovel() {
 
 	do {
 		std::cout << "\n ++++++++++++++++++++++++++++++++++++++++++++++\n" << "\n"
-			 << " \n Escolha uma das seguintes alternativas abaixo: " << "\n"
+			 << " Escolha uma das seguintes alternativas abaixo: " << "\n"
 			 << " Digite '1' para: Adicionar automóvel" << "\n"
 			 << " Digite '2' para: Listar automóveis" << "\n"
 			 << " Digite '3' para: Sair " << "\n"

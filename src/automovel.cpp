@@ -2,7 +2,7 @@
 
 Automovel::Automovel() {}
 
-Automovel::Automovel(std::string marca_, float preco_, int chassi_,
+Automovel::Automovel(std::string marca_, float preco_, std::string chassi_,
 					long int dataFabricacao_, std::string modelo_) {
 	m_marca = marca_;
 	m_preco = preco_;
@@ -29,11 +29,11 @@ void Automovel::setPreco(float preco_) {
 	m_preco = preco_;
 }
 
-int Automovel::getChassi() {
+std::string Automovel::getChassi() {
 	return m_chassi;
 }
 
-void Automovel::setChassi(int chassi_) {
+void Automovel::setChassi(std::string chassi_) {
 	m_chassi = chassi_;
 }
 

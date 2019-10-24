@@ -1,8 +1,8 @@
 #include "caminhao.h"
 
-Caminhao::caminhao() {}
+Caminhao::Caminhao() {}
 
-Caminhao::caminhao(Tipo_carga tipo_carga_){
+Caminhao::Caminhao(Tipo_carga tipo_carga_){
 	m_tipo_carga = tipo_carga_;
 }
 

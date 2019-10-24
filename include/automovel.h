@@ -10,13 +10,13 @@ class Automovel {
 private:
 	std::string m_marca;
 	float m_preco;
-	int m_chassi;
+	std::string m_chassi;
 	long int m_dataFabricacao;
 	std::string m_modelo;
 	
 public:
 	Automovel(); //Construtor padrão
-	Automovel(std::string marca_, float preco_, int chassi_,
+	Automovel(std::string marca_, float preco_, std::string chassi_,
 			  long int dataFabricacao_, std::string modelo_); //Construtor parametrizado
 	~Automovel(); //Destrutor
 
@@ -26,8 +26,8 @@ public:
 	float getPreco();
 	void setPreco(float preco_);
 
-	int getChassi();
-	void setChassi(int chassi_);
+	std::string getChassi();
+	void setChassi(std::string chassi_);
 
 	long int getDataFabricacao();
 	void setDataFabricacao(long int dataFabricacao_);

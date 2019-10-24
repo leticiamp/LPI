@@ -12,12 +12,12 @@ class Caminhao : public Automovel {
 private:
 	Tipo_carga m_tipo_carga;
 public:
-	Caminhao::Caminhao();
-	Caminhao::Caminhao(Tipo_carga tipo_carga_)
-	Caminhao::~Caminhao();
+	Caminhao();
+	Caminhao(Tipo_carga tipo_carga_);
+	~Caminhao();
 
-	Tipo_carga Caminhao::getTipo_carga();
-	void Caminhao::setTipo_carga(Tipo_carga tipo_carga_);
+	Tipo_carga getTipo_carga();
+	void setTipo_carga(Tipo_carga tipo_carga_);
 };
 
 #endif

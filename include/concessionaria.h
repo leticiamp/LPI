@@ -9,6 +9,7 @@ private:
 	int m_cnpj;
 	int m_estoque;
 	std::vector<Automovel> v_carros;
+	std::vector<std::string> v_chassis;
 
 public:
 	Concessionaria();
@@ -27,9 +28,14 @@ public:
 	std::vector<Automovel> getV_carros();
 	void setV_carros(Automovel carro_);
 
+	std::vector<std::string> getV_chassis();
+	void setV_chassis(std::string chassi_);
+
 	friend std::ostream& operator<< (std::ostream &o, Automovel const a); //Sobrecarga do operador de inserção
 
 	void aumentarValor(float porcentagem); //Aumento de x% no preço dos carros
+
+	void buscarChassi(std::string chassi_);
 };
 
 #endif
