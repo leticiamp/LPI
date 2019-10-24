@@ -70,4 +70,11 @@ void Concessionaria::aumentarValor(float porcentagem) {
 
 void Concessionaria::buscarChassi(std::string chassi_) {
 	//percorrer o vetor v_chassi procurando por chassi_
+	for(unsigned int i=0; i < v_chassis.size(); i++) {
+		if (chassi_.compare(v_chassis[i]) == 0) { //Se os chassis forem iguais
+			//std::cout sobrecarga do op
+			std::cout << v_chassis[i]; //teste
+		}
+	}
 }
+
