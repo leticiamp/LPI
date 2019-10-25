@@ -2,8 +2,8 @@
 Repositório criado para o projeto da 1º unidade da disciplina IMD0030 - Linguagem de Programação I
 
 ## Alunos:
+ * 20190002989 BRUNO ALYSSON DO AMARAL SOARES CARRILHO
  * 20170059474 LETÍCIA MOURA PINHEIRO
- * 20170062854 MATHEUS AUGUSTO DE MELLO FILGUEIRA
  
 ## Execução:
 Passo a passo para execução do programa:
