@@ -2,12 +2,15 @@
 #define CONCESSIONARIA_H
 
 #include "automovel.h"
+#include "propriedade.h"
 
 class Concessionaria {
 private:
 	std::string m_nome;
 	int m_cnpj;
 	int m_estoque;
+	//Propriedade<T> m_propriedade;
+
 	std::vector<Automovel> v_carros;
 	std::vector<std::string> v_chassis;
 

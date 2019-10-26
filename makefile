@@ -13,7 +13,7 @@ INC = ./include
 CPPFLAGS = -Wall -ansi -pedantic -O0 -g -std=c++11 -I$(INC)
 
 OBJS = $(OBJ)/automovel.o $(OBJ)/carro.o $(OBJ)/moto.o $(OBJ)/caminhao.o \
-		$(OBJ)/concessionaria.o $(OBJ)/system.o $(OBJ)/main.o
+		$(OBJ)/concessionaria.o $(OBJ)/propriedade.o $(OBJ)/system.o $(OBJ)/main.o
 
 all: dirs $(PROG)
 	$(PROG)
@@ -40,6 +40,9 @@ $(OBJ)/caminhao.o: $(INC)/caminhao.h
 
 $(OBJ)/concessionaria.o: $(INC)/concessionaria.h
 	$(CC) $(CPPFLAGS) -c $(SRC)/concessionaria.cpp -o $(OBJ)/concessionaria.o
+
+$(OBJ)/propriedade.o: $(INC)/propriedade.h
+	$(CC) $(CPPFLAGS) -c -o $(OBJ)/propriedade.o
 
 $(OBJ)/system.o: $(SRC)/system.cpp
 	$(CC) $(CPPFLAGS) -c $(SRC)/system.cpp -o $(OBJ)/system.o

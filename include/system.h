@@ -27,7 +27,7 @@ public:
 	char menuConcessionaria();
 	char menuAutomovel();	
 
-	void escreveConcessionaria(Concessionaria &C);
+	void escreveConcessionaria(Concessionaria &C); //Escreve informações de uma concessionaria em um arquivo .txt
 };
 
 #endif

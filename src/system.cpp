@@ -127,7 +127,7 @@ char System::menuConcessionaria() {
 						std::cin >> porcentagem;
 						C->aumentarValor(porcentagem);
 				break;
-			case '4' : escreveConcessionaria(C);
+			case '4' : escreveConcessionaria(*C);
 				break;
 			case '5' : // Nenhuma ação. Somente sai do menu.
 				break;
@@ -170,10 +170,9 @@ char System::menuAutomovel() {
 	return alternativa;	
 }
 
-void escreveConcessionaria(Concessionaria &C){
+void System::escreveConcessionaria(Concessionaria &C){
 	
     std::ofstream out("output.txt");
-	std::string n;
 	out << C.getNome();
     out << C.getCnpj();
 	out << C.getEstoque();
