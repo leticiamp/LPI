@@ -2,7 +2,8 @@
 #define CONCESSIONARIA_H
 
 #include "automovel.h"
-#include "propriedade.h"
+#include "data.h"
+//#include "propriedade.h"
 
 class Concessionaria {
 private:

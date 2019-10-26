@@ -73,7 +73,7 @@ void Concessionaria::buscarChassi(std::string chassi_) {
 	for(unsigned int i=0; i < v_chassis.size(); i++) {
 		if (chassi_.compare(v_chassis[i]) == 0) { //Se os chassis forem iguais
 			//std::cout sobrecarga do op
-			std::cout << v_chassis[i]; //teste
+			std::cout << "Chassi encontrado!" << std::endl; //teste
 		}
 	}
 }

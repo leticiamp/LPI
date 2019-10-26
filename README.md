@@ -8,7 +8,7 @@ Repositório criado para o projeto da 1º e 2º unidade da disciplina IMD0030 - 
 ## Execução:
 Passo a passo para execução do programa:
  * Digitar o comando make para compilar o programa
- * Digitar o comando ./AP1 para executar
+ * Digitar o comando ./AP2 para executar
 
 ## Roteiro:
 Executar o programa e seguir as instruçoes do menu baseado nas opções:
@@ -19,4 +19,5 @@ Executar o programa e seguir as instruçoes do menu baseado nas opções:
  * 
  
 ## Dificuldades:
- * Utilizar a classe vector
+ * Manipulação de arquivos
+ * Manipulação da classe Data

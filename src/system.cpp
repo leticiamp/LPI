@@ -21,7 +21,7 @@ void System::newconc() {
 
 	v_lojas.push_back(Concessionaria(nome, cnpj, estoque));
 
-	std::cout << "Concessionaria registrada" << std::endl;
+	std::cout << "\n Concessionaria registrada" << std::endl;
 }
 
 void System::newcar(Concessionaria &C) {
@@ -50,11 +50,11 @@ void System::newcar(Concessionaria &C) {
 
 	for(unsigned int i=0; i < C.getV_carros().size(); i++) {
 		if(chassi.compare(C.getV_carros()[i].getChassi()) == 0) { //Se as strings forem iguais
-			std::cout << "Este Veículo já foi cadastrado" << std::endl;
+			std::cout << "\n Este Veículo já foi cadastrado" << std::endl;
 		}
 		else {
 			C.setV_carros(Automovel(marca, preco, chassi, dataFabricacao, modelo));
-			std::cout << "Veículo cadastrado" << std::endl;
+			std::cout << "\n Veículo cadastrado" << std::endl;
 		}
 	}
 }
@@ -76,12 +76,14 @@ void System::media() {
 char System::menuInicial() {
 	char alternativa = 0;
 	do {
-		std::cout << "\n ++++++++++++++++++++++++++++++++++++++++++++++\n" << "\n"
+		std::cout << "\n ++++++++++++++++++++++++++++++++++++++++++++++\n"
+				  << "                  MENU INICIAL                 "
+				  << "\n ++++++++++++++++++++++++++++++++++++++++++++++\n" << "\n"
 				<< " Escolha uma das seguintes alternativas abaixo: " << "\n"
-				<< " Digite '1' para: Opções da Concessionaria" << "\n"
+				<< " \n Digite '1' para: Opções da Concessionaria" << "\n"
 				<< " Digite '2' para: Opções do Automovel" << "\n"
 				<< " Digite '3' para: Sair deste Menu" << "\n"
-				<< " Alternativa escolhida: ";
+				<< " \n Alternativa escolhida: ";
 
 				std::cin >> alternativa;
 				std::cin.ignore(); //cin.ignore() ignora caracteres não lidos no buffer de entrada
@@ -106,14 +108,16 @@ char System::menuConcessionaria() {
 	float porcentagem;
 
 	do {
-		std::cout << "\n ++++++++++++++++++++++++++++++++++++++++++++++\n" << "\n"
+		std::cout << "\n ++++++++++++++++++++++++++++++++++++++++++++++\n"
+					  << "               MENU CONCESSIONÁRIA                 "
+				  << "\n ++++++++++++++++++++++++++++++++++++++++++++++\n" << "\n"
 			 << " Escolha uma das seguintes alternativas abaixo: " << "\n"
-			 << " Digite '1' para: Criar concessionária" << "\n"
+			 << " \n Digite '1' para: Criar concessionária" << "\n"
 			 << " Digite '2' para: Listar concessionárias" << "\n"
 			 << " Digite '3' para: Aumentar valor" << "\n"
 			 << " Digite '4' para: Escrever concessionaria em txt:" << "\n"
-			 << " Digite '5' para: Sair " << "\n"
-			 << " Alternativa escolhida: ";
+			 << " Digite '5' para: Voltar " << "\n"
+			 << " \n Alternativa escolhida: ";
 
 			 std::cin >> alternativa;
 			 std::cin.ignore();
@@ -129,7 +133,7 @@ char System::menuConcessionaria() {
 				break;
 			case '4' : escreveConcessionaria(*C);
 				break;
-			case '5' : // Nenhuma ação. Somente sai do menu.
+			case '5' : //Volta para o menu inicial
 				break;
 			default : std::cout << " \n\n Alternativa inválida!" << std::endl;
 		}
@@ -143,12 +147,14 @@ char System::menuAutomovel() {
 	Concessionaria C;
 
 	do {
-		std::cout << "\n ++++++++++++++++++++++++++++++++++++++++++++++\n" << "\n"
+		std::cout << "\n ++++++++++++++++++++++++++++++++++++++++++++++\n"
+					<< "                 MENU AUTOMÓVEL                 "
+				  << "\n ++++++++++++++++++++++++++++++++++++++++++++++\n" << "\n"
 			 << " Escolha uma das seguintes alternativas abaixo: " << "\n"
-			 << " Digite '1' para: Adicionar automóvel" << "\n"
+			 << " \n Digite '1' para: Adicionar automóvel" << "\n"
 			 << " Digite '2' para: Listar automóveis" << "\n"
-			 << " Digite '3' para: Sair " << "\n"
-			 << " Alternativa escolhida: ";
+			 << " Digite '3' para: Voltar " << "\n"
+			 << " \n Alternativa escolhida: ";
 
 			 std::cin >> alternativa; 
 			 std::cin.ignore();
@@ -161,7 +167,7 @@ char System::menuAutomovel() {
 							std::cout << C -> getV_carros()[i];
 						}*/
 				break;
-			case '3' : // Nenhuma ação. Somente sai do menu.
+			case '3' : //Volta para o menu inicial
 				break;
 			default : std::cout << " \n\n Alternativa inválida!" << std::endl;
 		}
