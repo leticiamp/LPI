@@ -60,12 +60,12 @@ void System::newcar(Concessionaria &C) {
 }
 
 void System::media() {
-	Concessionaria *C;
+	Concessionaria C;
 	int count = 0;
 	float media;
 
 	for(unsigned int i=0; i < v_lojas.size(); i++) {
-		count += C -> getEstoque();
+		count += C . getEstoque();
 	}
 
 	media = count / v_lojas.size();
@@ -102,7 +102,7 @@ char System::menuInicial() {
 
 char System::menuConcessionaria() {
 	char alternativa = 0;
-	Concessionaria C;
+	Concessionaria *C = new Concessionaria("Nome",123,321);
 	float porcentagem;
 
 	do {
@@ -111,7 +111,8 @@ char System::menuConcessionaria() {
 			 << " Digite '1' para: Criar concessionária" << "\n"
 			 << " Digite '2' para: Listar concessionárias" << "\n"
 			 << " Digite '3' para: Aumentar valor" << "\n"
-			 << " Digite '4' para: Sair " << "\n"
+			 << " Digite '4' para: Escrever concessionaria em txt:" << "\n"
+			 << " Digite '5' para: Sair " << "\n"
 			 << " Alternativa escolhida: ";
 
 			 std::cin >> alternativa;
@@ -124,20 +125,22 @@ char System::menuConcessionaria() {
 				break;
 			case '3' : std::cout << "Informe a porcentagem:";
 						std::cin >> porcentagem;
-						C.aumentarValor(porcentagem);
+						C->aumentarValor(porcentagem);
 				break;
-			case '4' : // Nenhuma ação. Somente sai do menu.
+			case '4' : escreveConcessionaria(C);
+				break;
+			case '5' : // Nenhuma ação. Somente sai do menu.
 				break;
 			default : std::cout << " \n\n Alternativa inválida!" << std::endl;
 		}
-	} while(alternativa != '4');
+	} while(alternativa != '5');
 
 	return alternativa;
 }
 
 char System::menuAutomovel() {
 	char alternativa = 0;
-	Concessionaria *C;
+	Concessionaria C;
 
 	do {
 		std::cout << "\n ++++++++++++++++++++++++++++++++++++++++++++++\n" << "\n"
@@ -151,7 +154,7 @@ char System::menuAutomovel() {
 			 std::cin.ignore();
 
 		switch(alternativa){
-			case '1' : newcar(*C);
+			case '1' : newcar(C);
 				break;
 			case '2' : 
 						/*for(int i=0; i < C -> getEstoque(); i++) {
@@ -165,4 +168,14 @@ char System::menuAutomovel() {
 	} while (alternativa != '3');
 
 	return alternativa;	
+}
+
+void escreveConcessionaria(Concessionaria &C){
+	
+    std::ofstream out("output.txt");
+	std::string n;
+	out << C.getNome();
+    out << C.getCnpj();
+	out << C.getEstoque();
+    out.close();
 }

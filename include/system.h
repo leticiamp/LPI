@@ -1,6 +1,11 @@
 #ifndef SYSTEM_H
 #define SYSTEM_H
 
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+#include <string>
+
 #include "automovel.h"
 #include "concessionaria.h"
 
@@ -21,6 +26,8 @@ public:
 	char menuInicial();
 	char menuConcessionaria();
 	char menuAutomovel();	
+
+	void escreveConcessionaria(Concessionaria &C);
 };
 
 #endif
