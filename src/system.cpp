@@ -9,7 +9,7 @@ void System::newconc() {
 	int estoque;
 	std::string proprietario;
 	
-	std::cout << "Insira os dados da nova concessionaria" << std::endl;
+	std::cout << "Insira os dados da nova concessionaria:" << std::endl;
 
 	std::cout << "\tNome: ";
 	getline(std::cin, nome);
@@ -25,7 +25,7 @@ void System::newconc() {
 
 	v_lojas.push_back(Concessionaria(nome, cnpj, estoque, proprietario));
 
-	std::cout << "\n Concessionaria registrada" << std::endl;
+	std::cout << "\n\n Concessionaria registrada!" << std::endl;
 }
 
 void System::newcar(Concessionaria &C) {
@@ -108,7 +108,7 @@ char System::menuInicial() {
 
 char System::menuConcessionaria() {
 	char alternativa = 0;
-	Concessionaria *C = new Concessionaria("Nome",123,321,"proprietario");
+	Concessionaria *C = new Concessionaria("Autobraz",1815386,100,"Renan Moioli");
 	float porcentagem;
 
 	do {
@@ -131,7 +131,7 @@ char System::menuConcessionaria() {
 				break;
 			case '2' : //listarConcessionaria(C);
 				break;
-			case '3' : std::cout << "Informe a porcentagem:";
+			case '3' : std::cout << "Informe a porcentagem: ";
 						std::cin >> porcentagem;
 						C->aumentarValor(porcentagem);
 				break;
@@ -166,10 +166,15 @@ char System::menuAutomovel() {
 		switch(alternativa){
 			case '1' : newcar(C);
 				break;
-			case '2' : 
-						/*for(int i=0; i < C -> getEstoque(); i++) {
-							std::cout << C -> getV_carros()[i];
+			case '2' : /*if(C.getV_carros().size() == 0) {
+							std::cout << "Não existe nenhum veículo cadastrado!" << std::endl;
+						}
+						else {
+							for(int i=0; i < C.getEstoque(); i++) { //percorre todo os veiculos de uma concessionaria
+								std::cout << C.getV_carros()[i];
+							}
 						}*/
+
 				break;
 			case '3' : //Volta para o menu inicial
 				break;
@@ -189,9 +194,11 @@ char System::menuAutomovel() {
 
 void System::escreveConcessionaria(Concessionaria &C){
 	
-    std::ofstream out("output.txt");
-	out << C.getNome();
-    out << C.getCnpj();
-	out << C.getEstoque();
+    std::ofstream out("LP2.txt");
+
+    out << "Nome: " << C.getNome() << std::endl;
+	out << "CNPJ: " << C.getCnpj() << std::endl;
+    out << "Estoque: " << C.getEstoque() << std::endl;
+	out << "Proprietário: " << C.getProprietario() << std::endl;
     out.close();
 }

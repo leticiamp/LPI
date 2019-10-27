@@ -20,6 +20,8 @@ public:
 			  long int dataFabricacao_, std::string modelo_); //Construtor parametrizado
 	~Automovel(); //Destrutor
 
+	//Getters e Setters
+
 	std::string getMarca();
 	void setMarca(std::string marca_);
 

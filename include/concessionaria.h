@@ -13,13 +13,15 @@ private:
 	std::string m_proprietario;
 	//Propriedade<T> m_propriedade;
 
-	std::vector<Automovel> v_carros;
-	std::vector<std::string> v_chassis;
+	std::vector<Automovel> v_carros; //Vetor de carros
+	std::vector<std::string> v_chassis; //Vetor de chassis
 
 public:
-	Concessionaria();
-	Concessionaria(std::string nome, int cnpj, int estoque, std::string proprietario_); //Construtor 
+	Concessionaria(); //Construtor padrão
+	Concessionaria(std::string nome, int cnpj, int estoque, std::string proprietario_); //Construtor parametrizado
 	~Concessionaria(); //Destrutor
+
+	//Getters e Setters
 
 	std::string getNome();
 	void setNome(std::string nome_);
@@ -43,7 +45,7 @@ public:
 
 	void aumentarValor(float porcentagem); //Aumento de x% no preço dos carros
 
-	void buscarChassi(std::string chassi_);
+	void buscarChassi(std::string chassi_); //Função que encontra veículo pelo chassi
 };
 
 #endif

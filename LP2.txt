@@ -1,0 +1,4 @@
+Nome: Autobraz
+CNPJ: 1815386
+Estoque: 100
+Proprietário: Renan Moioli

@@ -11,10 +11,10 @@
 
 class System {
 private:
-	std::vector<Concessionaria> v_lojas;
+	std::vector<Concessionaria> v_lojas; //Vetor de concessionarias
 public:
-	System();
-	~System();
+	System(); //Construtor padrão
+	~System(); //Destrutor
 
 	std::vector<Concessionaria> getV_lojas();
 	void setV_carros(Concessionaria lojas_);

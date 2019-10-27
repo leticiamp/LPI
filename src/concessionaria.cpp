@@ -72,8 +72,16 @@ std::ostream& operator<< (std::ostream &o, Automovel a) {
 }
 
 void Concessionaria::aumentarValor(float porcentagem) {
-	for (unsigned int i=0; i < v_carros.size(); i++) {
-		v_carros[i].setPreco(v_carros[i].getPreco() * (porcentagem/100) + 1);
+	if (v_carros.empty()) { //Se o vetor estiver vazio
+		std::cout << "Não existe nenhum veículo cadastrado!" << std::endl;
+	}
+
+	else {
+		for (unsigned int i=0; i < v_carros.size(); i++) {
+			v_carros[i].setPreco(v_carros[i].getPreco() * (porcentagem/100) + 1);
+		}
+
+		std::cout << "Valor dos veículos aumentado em " << porcentagem << "%" << std::endl;
 	}
 }
 
