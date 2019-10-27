@@ -2,10 +2,11 @@
 
 Concessionaria::Concessionaria() {} //Construtor padrão
 
-Concessionaria::Concessionaria(std::string nome_, int cnpj_, int estoque_) { //Construtor parametrizado
+Concessionaria::Concessionaria(std::string nome_, int cnpj_, int estoque_, std::string proprietario_) { //Construtor parametrizado
 	m_nome = nome_;
 	m_cnpj = cnpj_;
 	m_estoque = estoque_;
+	m_proprietario = proprietario_;
 }
 
 Concessionaria::~Concessionaria() {} //Destrutor
@@ -33,6 +34,14 @@ int Concessionaria::getEstoque() {
 void Concessionaria::setEstoque(int estoque_) {
 	m_estoque = estoque_;
 
+}
+
+std::string Concessionaria::getProprietario() {
+	return m_proprietario;
+}
+
+void Concessionaria::setProprietario(std::string proprietario_) {
+	m_proprietario = proprietario_;
 }
 
 std::vector<Automovel> Concessionaria::getV_carros() {

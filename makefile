@@ -14,7 +14,6 @@ CPPFLAGS = -Wall -ansi -pedantic -O0 -g -std=c++11 -I$(INC)
 
 OBJS = $(OBJ)/automovel.o $(OBJ)/carro.o $(OBJ)/moto.o $(OBJ)/caminhao.o \
 		$(OBJ)/concessionaria.o $(OBJ)/data.o $(OBJ)/system.o $(OBJ)/main.o
-		#$(OBJ)/propriedade.o
 
 all: dirs $(PROG)
 	$(PROG)
@@ -44,9 +43,6 @@ $(OBJ)/concessionaria.o: $(INC)/concessionaria.h
 
 $(OBJ)/data.o: $(INC)/data.h
 	$(CC) $(CPPFLAGS) -c $(SRC)/data.cpp -o $(OBJ)/data.o
-
-#$(OBJ)/propriedade.o: $(INC)/propriedade.h
-#    $(CC) $(CPPFLAGS) -c -o $(OBJ)/propriedade.o
 
 $(OBJ)/system.o: $(SRC)/system.cpp
 	$(CC) $(CPPFLAGS) -c $(SRC)/system.cpp -o $(OBJ)/system.o

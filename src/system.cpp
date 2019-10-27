@@ -7,6 +7,7 @@ void System::newconc() {
 	std::string nome;
 	int cnpj;
 	int estoque;
+	std::string proprietario;
 	
 	std::cout << "Insira os dados da nova concessionaria" << std::endl;
 
@@ -19,7 +20,10 @@ void System::newconc() {
 	std::cout << "\tTamanho do estoque: ";
 	std::cin >> estoque;
 
-	v_lojas.push_back(Concessionaria(nome, cnpj, estoque));
+	std::cout << "\tProprietário: ";
+	getline(std::cin, proprietario);
+
+	v_lojas.push_back(Concessionaria(nome, cnpj, estoque, proprietario));
 
 	std::cout << "\n Concessionaria registrada" << std::endl;
 }
@@ -104,7 +108,7 @@ char System::menuInicial() {
 
 char System::menuConcessionaria() {
 	char alternativa = 0;
-	Concessionaria *C = new Concessionaria("Nome",123,321);
+	Concessionaria *C = new Concessionaria("Nome",123,321,"proprietario");
 	float porcentagem;
 
 	do {
@@ -125,7 +129,7 @@ char System::menuConcessionaria() {
 		switch(alternativa) {
 			case '1' : newconc();
 				break;
-			case '2' : //metodo para listar as concessionarias
+			case '2' : //listarConcessionaria(C);
 				break;
 			case '3' : std::cout << "Informe a porcentagem:";
 						std::cin >> porcentagem;
@@ -175,6 +179,13 @@ char System::menuAutomovel() {
 
 	return alternativa;	
 }
+
+/*void listarConcessionaria(Concessionaria &C) {
+	std::cout << "Proprietário: " << C.getProprietario()
+			<< "Frota total: " << C.getEstoque()
+			<< "Valor total: " << C. //Acho que precisa criar uma função para calcular o valor total
+
+} */
 
 void System::escreveConcessionaria(Concessionaria &C){
 	

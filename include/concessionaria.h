@@ -10,6 +10,7 @@ private:
 	std::string m_nome;
 	int m_cnpj;
 	int m_estoque;
+	std::string m_proprietario;
 	//Propriedade<T> m_propriedade;
 
 	std::vector<Automovel> v_carros;
@@ -17,7 +18,7 @@ private:
 
 public:
 	Concessionaria();
-	Concessionaria(std::string nome, int cnpj, int estoque); //Construtor 
+	Concessionaria(std::string nome, int cnpj, int estoque, std::string proprietario_); //Construtor 
 	~Concessionaria(); //Destrutor
 
 	std::string getNome();
@@ -28,6 +29,9 @@ public:
 
 	int getEstoque();
 	void setEstoque(int estoque_);
+
+	std::string getProprietario();
+	void setProprietario(std::string proprietario_);
 
 	std::vector<Automovel> getV_carros();
 	void setV_carros(Automovel carro_);
