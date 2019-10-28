@@ -138,14 +138,14 @@ char System::menuConcessionaria() {
 				break;
 			case '4' : escreveConcessionaria(*C);
 				break;
-				case '5' : string str = lerConcessionaria(*C);
+			case '5' : string str = lerConcessionaria(*C);
 							std::cout << str << std::endl;
 				break;
 			case '6' : //Volta para o menu inicial
 				break;
 			default : std::cout << " \n\n Alternativa inválida!" << std::endl;
 		}
-	} while(alternativa != '5');
+	} while(alternativa != '6');
 
 	return alternativa;
 }
