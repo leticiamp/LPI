@@ -30,6 +30,7 @@ public:
 
 	void listarConcessionaria(Concessionaria &C); //Lista o proprietário, a frota total de cada tipo de veículo e o valor total dos veículos
 	void escreveConcessionaria(Concessionaria &C); //Escreve informações de uma concessionaria em um arquivo .txt
+	string lerConcessionaria(Concessionaria &C); //Lê informações de uma concessionaria em um arquivo .txt
 };
 
 #endif

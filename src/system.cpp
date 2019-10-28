@@ -120,7 +120,8 @@ char System::menuConcessionaria() {
 			 << " Digite '2' para: Listar concessionárias" << "\n"
 			 << " Digite '3' para: Aumentar valor" << "\n"
 			 << " Digite '4' para: Escrever concessionaria em txt:" << "\n"
-			 << " Digite '5' para: Voltar " << "\n"
+			 << " Digite '5' para: Ler concessionaria em txt:" << "\n"
+			 << " Digite '6' para: Voltar " << "\n"
 			 << " \n Alternativa escolhida: ";
 
 			 std::cin >> alternativa;
@@ -137,7 +138,10 @@ char System::menuConcessionaria() {
 				break;
 			case '4' : escreveConcessionaria(*C);
 				break;
-			case '5' : //Volta para o menu inicial
+				case '5' : string str = lerConcessionaria(*C);
+							std::cout << str << std::endl;
+				break;
+			case '6' : //Volta para o menu inicial
 				break;
 			default : std::cout << " \n\n Alternativa inválida!" << std::endl;
 		}
@@ -204,26 +208,10 @@ void System::escreveConcessionaria(Concessionaria &C){
     out.close();
 }
 
-/*
-#include <iostream>
-#include <string>
-#include <fstream>
-#include <streambuf> //Incluir na system.h
 
-using namespace std;
-
-string ler_concessionaria( const string& arq )
+string System::ler_concessionaria( const string& arq )
 {
-    ifstream ifs(arq.c_str());
-    string str((istreambuf_iterator<char>(ifs)), istreambuf_iterator<char>());
+    std::ifstream ifs(arq.c_str());
+    std:: string str((istreambuf_iterator<char>(ifs)), istreambuf_iterator<char>());
     return str;
 }
-
-int main( void )
-{
-    string str = ler_arquivo( "arquivo.txt" );
-    cout << str << endl;
-    return 0;
-}
-*/
-//testar função depois
