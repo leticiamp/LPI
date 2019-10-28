@@ -202,3 +202,28 @@ void System::escreveConcessionaria(Concessionaria &C){
 	out << "Proprietário: " << C.getProprietario() << std::endl;
     out.close();
 }
+
+/*
+#include <iostream>
+#include <string>
+#include <fstream>
+#include <streambuf> //Incluir na system.h
+
+using namespace std;
+
+string ler_concessionaria( const string& arq )
+{
+    ifstream ifs(arq.c_str());
+    string str((istreambuf_iterator<char>(ifs)), istreambuf_iterator<char>());
+    return str;
+}
+
+int main( void )
+{
+    string str = ler_arquivo( "arquivo.txt" );
+    cout << str << endl;
+    return 0;
+}
+
+*/ 
+//testar função depois
