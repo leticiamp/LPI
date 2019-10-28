@@ -138,8 +138,8 @@ char System::menuConcessionaria() {
 				break;
 			case '4' : escreveConcessionaria(*C);
 				break;
-			case '5' : string str = lerConcessionaria(*C);
-							std::cout << str << std::endl;
+			case '5' : std::string str = lerConcessionaria(*C);
+						std::cout << str << std::endl;
 				break;
 			case '6' : //Volta para o menu inicial
 				break;
@@ -196,7 +196,7 @@ void System::listarConcessionaria(Concessionaria &C) {
 			<< std::endl;
 }
 
-void System::escreveConcessionaria(Concessionaria &C){
+void System::escreveConcessionaria(Concessionaria &C) {
 	
     std::ofstream out("LP2.txt");
 
@@ -209,9 +209,8 @@ void System::escreveConcessionaria(Concessionaria &C){
 }
 
 
-string System::ler_concessionaria( const string& arq )
-{
+std::string System::ler_concessionaria( const std::string& arq ) {
     std::ifstream ifs(arq.c_str());
-    std:: string str((istreambuf_iterator<char>(ifs)), istreambuf_iterator<char>());
+    std::string str((istreambuf_iterator<char>(ifs)), istreambuf_iterator<char>());
     return str;
 }
