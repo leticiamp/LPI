@@ -44,8 +44,8 @@ public:
 	friend std::ostream& operator<< (std::ostream &o, Automovel const a); //Sobrecarga do operador de inserção
 
 	void aumentarValor(float porcentagem); //Aumento de x% no preço dos carros
-
 	void buscarChassi(std::string chassi_); //Função que encontra veículo pelo chassi
+	float valorTotal(); //Função que calcula o valor de todos os veículos de uma concessionária
 };
 
 #endif

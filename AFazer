@@ -17,9 +17,9 @@ f) O programa deve possuir uma função para listar os proprietários de concess
 g) Inclua uma funcionalidade inédita que utilize um ou mais conteúdos da Unidade 2.
 
 - MenuAutomovel: Listar automóveis
-- Terminar listarConcessionaria() (função chamada no menuConcessionaria)
 - Na função criar automovel, não da pra colocar o chassi
 - Na função criar concessionaria, não da pra colocar o proprietario
+- Nas funções listar concessionaria e escrever em .txt, só pega a concessionaria criada no menuConcessionaria
 
 
 - Fazer todos os testes

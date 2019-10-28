@@ -5,6 +5,7 @@
 #include <fstream>
 #include <cstdlib>
 #include <string>
+#include <streambuf>
 
 #include "automovel.h"
 #include "concessionaria.h"

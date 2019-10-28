@@ -129,7 +129,7 @@ char System::menuConcessionaria() {
 		switch(alternativa) {
 			case '1' : newconc();
 				break;
-			case '2' : //listarConcessionaria(C);
+			case '2' : listarConcessionaria(*C);
 				break;
 			case '3' : std::cout << "Informe a porcentagem: ";
 						std::cin >> porcentagem;
@@ -185,12 +185,12 @@ char System::menuAutomovel() {
 	return alternativa;	
 }
 
-/*void listarConcessionaria(Concessionaria &C) {
+void System::listarConcessionaria(Concessionaria &C) {
 	std::cout << "Proprietário: " << C.getProprietario()
-			<< "Frota total: " << C.getEstoque()
-			<< "Valor total: " << C. //Acho que precisa criar uma função para calcular o valor total
-
-} */
+			<< "\nFrota total: " << C.getEstoque()
+			<< "\nValor total: " << C.valorTotal()
+			<< std::endl;
+}
 
 void System::escreveConcessionaria(Concessionaria &C){
 	
@@ -200,6 +200,7 @@ void System::escreveConcessionaria(Concessionaria &C){
 	out << "CNPJ: " << C.getCnpj() << std::endl;
     out << "Estoque: " << C.getEstoque() << std::endl;
 	out << "Proprietário: " << C.getProprietario() << std::endl;
+
     out.close();
 }
 
@@ -224,6 +225,5 @@ int main( void )
     cout << str << endl;
     return 0;
 }
-
-*/ 
+*/
 //testar função depois

@@ -95,3 +95,12 @@ void Concessionaria::buscarChassi(std::string chassi_) {
 	}
 }
 
+float Concessionaria::valorTotal() {
+	float total = 0;
+
+	for(int i=0; i < m_estoque; i++) {
+		total += v_carros[i].getPreco();
+	}
+
+	return total;
+}
