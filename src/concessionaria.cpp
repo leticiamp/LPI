@@ -77,7 +77,7 @@ void Concessionaria::aumentarValor(float porcentagem) {
 void Concessionaria::buscarChassi(std::string chassi_) {
 	unsigned int i = 0;
 
-	while(i < v_chassis.size() && chassi_ != v_chassis[i].getChassi()){
+	while(i < v_chassis.size() && chassi_ != v_carros[i].getChassi()){
 		i++;
 	}
 
