@@ -22,7 +22,6 @@ all: dirs $(PROG)
 dirs:
 	mkdir -p $(OBJ)
 
-
 $(PROG): $(OBJS)
 	$(CC) $(CPPFLAGS) -o $(PROG) $(OBJS)
 
