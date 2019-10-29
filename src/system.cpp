@@ -188,7 +188,7 @@ char System::menuAutomovel() {
 				break;
 			case '3' : //Volta para o menu inicial
 				break;
-			default : std::cout << " \n\n Alternativa inválida!" << std::endl;
+			default : std::cout << "\n\n Alternativa inválida!" << std::endl;
 		}
 	} while (alternativa != '3');
 
@@ -202,21 +202,21 @@ void System::listarConcessionaria() {
 		<< "\nValor total: " << C.valorTotal()
 		<< std::endl;
 	}
-
-
 }
 
 void System::escreveConcessionaria(std::string nome) {
-	
     unsigned int i=0;
-	while(i<v_lojas.size() && nome != v_lojas[i].getNome()){
+
+	while(i < v_lojas.size() && nome != v_lojas[i].getNome()){
 		i++;
 	}
+
 	if (i == v_lojas.size()){
 		std::cout<< "Concessionaria não encontrada" << std::endl;
 	}
 	else {
 		std::ofstream out("LP2.txt");
+
 		out << "Nome: " << nome << std::endl;
 		out << "CNPJ: " << v_lojas[i].getCnpj() << std::endl;
     	out << "Estoque: " << v_lojas[i].getEstoque() << std::endl;
@@ -228,13 +228,15 @@ void System::escreveConcessionaria(std::string nome) {
 
 Concessionaria System::lerConcessionaria(const std::string& arq) {
     std::ifstream ifs(arq.c_str());
+
     std:: string nome, cnpj, estoque, proprietario;
+
     ifs >> nome;
     ifs >> cnpj;
     ifs >> estoque;
     ifs >> proprietario;
+
     std::string str((istreambuf_iterator<char>(ifs)), istreambuf_iterator<char>());
 
     return Concessionaria(nome, std::stoi(cnpj), std::stoi(estoque), proprietario);
-
 }

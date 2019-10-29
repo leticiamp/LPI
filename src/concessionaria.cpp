@@ -75,14 +75,26 @@ void Concessionaria::aumentarValor(float porcentagem) {
 }
 
 void Concessionaria::buscarChassi(std::string chassi_) {
-	//percorrer o vetor v_chassi procurando por chassi_
-	for(unsigned int i=0; i < v_chassis.size(); i++) {
-		if (chassi_.compare(v_chassis[i]) == 0) { //Se os chassis forem iguais
-			//std::cout sobrecarga do op
-			std::cout << "Chassi encontrado!" << std::endl; //teste
+	unsigned int i = 0;
+
+	while(i < v_chassis.size() && chassi_ != v_chassis[i].getChassi()){
+		i++;
+	}
+
+	if (i == v_chassis.size()){
+		std::cout<< "Chassi não encontrado!" << std::endl;
+	}
+	else {
+		//Aqui eu já tenho o chassi que tava procurando, que é v_chassis[i]
+		//percorro a lista de carros.getChassi() pra encontrar o veiculo com aquele chassi
+		for (Automovel &A : v_carros) {
+			if (v_chassis[i] == A.getChassi()) {
+				std::cout << A;
+			}
 		}
 	}
 }
+
 
 float Concessionaria::valorTotal() {
 	float total = 0;
