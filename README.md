@@ -1,5 +1,5 @@
 # LPI
-Repositório criado para o projeto da 1º e 2º unidade da disciplina IMD0030 - Linguagem de Programação I
+Repositório criado para o projeto da 2º unidade da disciplina IMD0030 - Linguagem de Programação I
 
 ## Alunos:
  * 20190002989  - BRUNO ALYSSON DO AMARAL SOARES CARRILHO
@@ -16,7 +16,8 @@ Executar o programa e seguir as instruçoes do menu baseado nas opções:
  * O menu de opções de automóvel é responsável por adicionar e listar automóveis
 
 ## Limitações do programa:
- * 
+ * Não lista os carros com base na data
+ * Não usa a classe Propriedade
  
 ## Dificuldades:
  * Manipulação de arquivos
