@@ -3,7 +3,7 @@
 
 #include "automovel.h"
 #include "data.h"
-//#include "propriedade.h"
+#include "propriedade.h"
 
 class Concessionaria {
 private:
@@ -40,8 +40,6 @@ public:
 
 	std::vector<std::string> getV_chassis();
 	void setV_chassis(std::string chassi_);
-
-	friend std::ostream& operator<< (std::ostream &o, Automovel const a); //Sobrecarga do operador de inserção
 
 	void aumentarValor(float porcentagem); //Aumento de x% no preço dos carros
 	void buscarChassi(std::string chassi_); //Função que encontra veículo pelo chassi

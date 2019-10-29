@@ -52,3 +52,13 @@ std::string Automovel::getModelo(){
 void Automovel::setModelo(std::string modelo_) {
 	m_modelo = modelo_;
 }
+
+std::ostream& operator<< (std::ostream &o, Automovel a) {
+	o << a.getMarca() << std::endl;
+	o << a.getModelo() << std::endl;
+	o << a.getChassi() << std::endl;
+	o << a.getDataFabricacao() << std::endl;
+	o << a.getPreco() << std::endl;
+	
+	return o;
+}

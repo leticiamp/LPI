@@ -60,17 +60,6 @@ void Concessionaria::setV_chassis(std::string chassi_) {
 	v_chassis.push_back(chassi_);
 }
 
-//Sobrecarga que lista os carros da concessionaria
-std::ostream& operator<< (std::ostream &o, Automovel a) {
-	o << a.getMarca() << std::endl;
-	o << a.getModelo() << std::endl;
-	o << a.getChassi() << std::endl;
-	o << a.getDataFabricacao() << std::endl;
-	o << a.getPreco() << std::endl;
-	
-	return o;
-}
-
 void Concessionaria::aumentarValor(float porcentagem) {
 	if (v_carros.empty()) { //Se o vetor estiver vazio
 		std::cout << "Não existe nenhum veículo cadastrado!" << std::endl;

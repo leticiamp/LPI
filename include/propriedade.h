@@ -28,7 +28,7 @@ template <class T>
 Propriedade<T>::~Propriedade() {}
 
 template <class T>
-Propriedade<T>::getPrimeiroNome() {
+T Propriedade<T>::getPrimeiroNome() {
 	return m_primeiroNome;
 }
 
@@ -38,7 +38,7 @@ void Propriedade<T>::setPrimeiroNome(T primeiroNome_) {
 }
 
 template <class T>
-Propriedade<T>::getSegundoNome() {
+T Propriedade<T>::getSegundoNome() {
 	return m_segundoNome;
 }
 

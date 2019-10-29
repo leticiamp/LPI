@@ -20,6 +20,7 @@ void System::newconc() {
 	std::cout << "\tTamanho do estoque: ";
 	std::cin >> estoque;
 
+	std::cin.ignore();
 	std::cout << "\tProprietário: ";
 	getline(std::cin, proprietario);
 
@@ -108,8 +109,9 @@ char System::menuInicial() {
 
 char System::menuConcessionaria() {
 	char alternativa = 0;
-	Concessionaria *C = new Concessionaria("Autobraz",1815386,100,"Renan Moioli");
+	Concessionaria C;
 	float porcentagem;
+	std::string arq, nome;
 
 	do {
 		std::cout << "\n ++++++++++++++++++++++++++++++++++++++++++++++\n"
@@ -130,16 +132,20 @@ char System::menuConcessionaria() {
 		switch(alternativa) {
 			case '1' : newconc();
 				break;
-			case '2' : listarConcessionaria(*C);
+			case '2' : listarConcessionaria();
 				break;
 			case '3' : std::cout << "Informe a porcentagem: ";
 						std::cin >> porcentagem;
-						C->aumentarValor(porcentagem);
+						C.aumentarValor(porcentagem);
 				break;
-			case '4' : escreveConcessionaria(*C);
+			case '4' : 
+						std::cout<< "Digite o nome de uma concessionaria: ";
+						std::cin >> nome;
+						escreveConcessionaria(nome);
 				break;
-			case '5' : std::string str = lerConcessionaria(*C);
-						std::cout << str << std::endl;
+			case '5' : std::cin >> arq;
+						C = lerConcessionaria(arq);
+						v_lojas.push_back(C);
 				break;
 			case '6' : //Volta para o menu inicial
 				break;
@@ -170,14 +176,14 @@ char System::menuAutomovel() {
 		switch(alternativa){
 			case '1' : newcar(C);
 				break;
-			case '2' : /*if(C.getV_carros().size() == 0) {
+			case '2' : if(C.getV_carros().size() == 0) {
 							std::cout << "Não existe nenhum veículo cadastrado!" << std::endl;
 						}
 						else {
 							for(int i=0; i < C.getEstoque(); i++) { //percorre todo os veiculos de uma concessionaria
 								std::cout << C.getV_carros()[i];
 							}
-						}*/
+						}
 
 				break;
 			case '3' : //Volta para o menu inicial
@@ -189,28 +195,46 @@ char System::menuAutomovel() {
 	return alternativa;	
 }
 
-void System::listarConcessionaria(Concessionaria &C) {
-	std::cout << "Proprietário: " << C.getProprietario()
-			<< "\nFrota total: " << C.getEstoque()
-			<< "\nValor total: " << C.valorTotal()
-			<< std::endl;
+void System::listarConcessionaria() {
+	for (Concessionaria &C : v_lojas) {
+		std::cout << "Proprietário: " << C.getProprietario()
+		<< "\nFrota total: " << C.getEstoque()
+		<< "\nValor total: " << C.valorTotal()
+		<< std::endl;
+	}
+
+
 }
 
-void System::escreveConcessionaria(Concessionaria &C) {
+void System::escreveConcessionaria(std::string nome) {
 	
-    std::ofstream out("LP2.txt");
+    unsigned int i=0;
+	while(i<v_lojas.size() && nome != v_lojas[i].getNome()){
+		i++;
+	}
+	if (i == v_lojas.size()){
+		std::cout<< "Concessionaria não encontrada" << std::endl;
+	}
+	else {
+		std::ofstream out("LP2.txt");
+		out << "Nome: " << nome << std::endl;
+		out << "CNPJ: " << v_lojas[i].getCnpj() << std::endl;
+    	out << "Estoque: " << v_lojas[i].getEstoque() << std::endl;
+		out << "Proprietário: " << v_lojas[i].getProprietario() << std::endl;
 
-    out << "Nome: " << C.getNome() << std::endl;
-	out << "CNPJ: " << C.getCnpj() << std::endl;
-    out << "Estoque: " << C.getEstoque() << std::endl;
-	out << "Proprietário: " << C.getProprietario() << std::endl;
-
-    out.close();
+    	out.close();
+	}
 }
 
-
-std::string System::ler_concessionaria( const std::string& arq ) {
+Concessionaria System::lerConcessionaria(const std::string& arq) {
     std::ifstream ifs(arq.c_str());
+    std:: string nome, cnpj, estoque, proprietario;
+    ifs >> nome;
+    ifs >> cnpj;
+    ifs >> estoque;
+    ifs >> proprietario;
     std::string str((istreambuf_iterator<char>(ifs)), istreambuf_iterator<char>());
-    return str;
+
+    return Concessionaria(nome, std::stoi(cnpj), std::stoi(estoque), proprietario);
+
 }

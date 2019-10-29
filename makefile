@@ -38,7 +38,7 @@ $(OBJ)/moto.o: $(INC)/moto.h
 $(OBJ)/caminhao.o: $(INC)/caminhao.h
 	$(CC) $(CPPFLAGS) -c $(SRC)/caminhao.cpp -o $(OBJ)/caminhao.o
 
-$(OBJ)/concessionaria.o: $(INC)/concessionaria.h
+$(OBJ)/concessionaria.o: $(INC)/concessionaria.h $(INC)/propriedade.h
 	$(CC) $(CPPFLAGS) -c $(SRC)/concessionaria.cpp -o $(OBJ)/concessionaria.o
 
 $(OBJ)/data.o: $(INC)/data.h

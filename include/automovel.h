@@ -36,6 +36,8 @@ public:
 
 	std::string getModelo();
 	void setModelo(std::string modelo_);
+
+	friend std::ostream& operator<< (std::ostream &o, Automovel const a); //Sobrecarga do operador de inserção
 };
 
 #endif
