@@ -45,13 +45,13 @@ void System::newcar(Concessionaria &C) {
 	std::cin >> preco;
 
 	std::cout << "\tChassi: ";
-	getline(std::cin, chassi);
+	std::cin >> chassi;
 
 	std::cout << "\tData de Fabricacao: ";
 	std::cin >> dataFabricacao;
 
 	std::cout << "\tModelo: ";
-	getline(std::cin, modelo);
+	std::cin >> modelo;
 
 	for(unsigned int i=0; i < C.getV_carros().size(); i++) {
 		if(chassi.compare(C.getV_carros()[i].getChassi()) == 0) { //Se as strings forem iguais
